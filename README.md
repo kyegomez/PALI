@@ -17,7 +17,7 @@ PaLI is a unified language-image model trained to perform many tasks and in over
 
 ## Installation
 ```bash
-git clone https://github.com/google-research/PaLI.git
+git clone https://github.com/kyegomez/PaLI.git
 cd PaLI
 pip install -r requirements.txt
 ```
