@@ -32,26 +32,29 @@ Here's an example of how to use the Pali model:
 
 ```python
 import torch
-from pali import Pali, PaliTokenizer
+from pali.model import vit, pali
 
-# Initialize the model and tokenizer
-model = Pali()
-tokenizer = PaliTokenizer()
 
-# Prepare the inputs
-text_input = "This is an example input text."
-text_input = tokenizer.tokenize_texts(text_input)
+#training data
+img = torch.randn(1, 3, 256, 256)
+prompt = torch.randint(0, 256, (1, 1024)) # prompt
+prompt_mask = torch.ones(1, 1024).bool()
+output_text = torch.randint(0, 256, (1, 1024)) #target output text
 
-# For the image input, you would typically prepare a batch of image tensors.
-# For this example, we'll just use a random tensor.
-image_input = torch.rand(1, 3, 224, 224)
+#train
+img_embeds = vit(
+    img, 
+    return_embeddings=True
+)
 
-# Pass the inputs through the model
-output = model(text_input, image_input)
+loss = pali(
+    prompt,
+    output_text,
+    mask=prompt_mask,
+    src_prepend_embeds=img_embeds # will prepend image embeddings
+)
 
-# The output is a Seq2SeqLMOutput object (see Hugging Face's documentation for details).
-# You can access the generated token ids using output.logits.argmax(-1).
-
+loss.backward()
 
 ```
 
