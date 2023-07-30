@@ -18,6 +18,7 @@ setup(
     ],
     install_requires=[
         'transformers',
+        'primus',
         'torch',
     ],
     classifiers=[
