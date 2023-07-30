@@ -24,7 +24,7 @@ pip install pali
 Additionally, the dependencies can be manually installed:
 
 ```bash
-pip install torch transformers
+pip install pali-torch
 ```
 
 # Usage
