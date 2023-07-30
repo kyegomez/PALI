@@ -18,12 +18,6 @@ Pali delivers a transformative approach to multimodal understanding, opening up 
 Pali can be installed via pip:
 
 ```bash
-pip install pali
-```
-
-Additionally, the dependencies can be manually installed:
-
-```bash
 pip install pali-torch
 ```
 
