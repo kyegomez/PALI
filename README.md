@@ -1,7 +1,4 @@
 # Pali: A Multimodal Model
-
-## Introduction
-
 Pali is a powerful, state-of-the-art multimodal model designed to process and generate responses from both text and image inputs. By combining the text processing prowess of MT5 and image processing capabilities of ViT (Vision Transformer), Pali offers an enhanced understanding of multimodal data. 
 
 
