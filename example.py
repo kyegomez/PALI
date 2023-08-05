@@ -4,9 +4,16 @@ from pali.model import vit, pali
 
 #training data
 img = torch.randn(1, 3, 256, 256)
+print(img)
+print(img.shape)
+
 prompt = torch.randint(0, 256, (1, 1024)) # prompt
+print(prompt)
+
 prompt_mask = torch.ones(1, 1024).bool()
+print(prompt_mask)
 output_text = torch.randint(0, 256, (1, 1024)) #target output text
+print(output_text)
 
 #train
 img_embeds = vit(
