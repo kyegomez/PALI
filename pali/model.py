@@ -2,12 +2,19 @@ import torch
 from pali.transformer import ViTransformerWrapper, Encoder, XTransformer
 
 class VitModel:
-    def __init__(self, image_size=256, 
+    def __init__(self, 
+                 image_size=256, 
                  patch_size=32, 
                  dim=512, 
                  depth=6, 
                  heads=8, 
                  *args, **kwargs):
+        self.image_size = image_size
+        self.patch_size = patch_size
+        self.dim = dim
+
+        self.depth = depth
+        self.heads = heads
         self.vit = ViTransformerWrapper(
             image_size=image_size,
             patch_size=patch_size,
@@ -17,6 +24,7 @@ class VitModel:
                 heads=heads
             )
         )
+    
         
     def process(self, img):
         if img is None:
