@@ -53,18 +53,18 @@ class Pali:
             src_prepend_embeds=img_embeds
         )
 
-# usage
-vit_module = ViTModule()
-pali_module = PaliModule()
+# # usage
+# vit_module = ViTModule()
+# pali_module = PaliModule()
 
-#training data
-img = torch.randn(1, 3, 256, 256)
-prompt = torch.randint(0, 256, (1, 1024)) # prompt
-prompt_mask = torch.ones(1, 1024).bool()
-output_text = torch.randint(0, 256, (1, 1024)) #target output text
+# #training data
+# img = torch.randn(1, 3, 256, 256)
+# prompt = torch.randint(0, 256, (1, 1024)) # prompt
+# prompt_mask = torch.ones(1, 1024).bool()
+# output_text = torch.randint(0, 256, (1, 1024)) #target output text
 
-img_embeds = vit_module.process(img)
+# img_embeds = vit_module.process(img)
 
-loss = pali_module.process(prompt, output_text, prompt_mask, img_embeds)
+# loss = pali_module.process(prompt, output_text, prompt_mask, img_embeds)
 
-loss.backward()
+# loss.backward()
