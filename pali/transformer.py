@@ -1553,6 +1553,7 @@ class XTransformer(nn.Module):
         pad_value = 0,
         deepnorm = False,
         cross_attn_tokens_dropout = 0.,
+        embedding_provider,
         **kwargs
     ):
         super().__init__()
@@ -1585,6 +1586,7 @@ class XTransformer(nn.Module):
 
         self.encoder = TransformerWrapper(
             **enc_transformer_kwargs,
+            embedding_provider=embedding_provider,
             attn_layers = Encoder(dim = dim, **enc_kwargs)
         )
 
