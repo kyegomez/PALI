@@ -740,7 +740,7 @@ class Attention(nn.Module):
             dropout = dropout,
             qk_norm = qk_norm,
             scale = qk_norm_scale if qk_norm else self.scale,
-            add_zero_kv=add_zero_kv,
+            # add_zero_kv=add_zero_kv,
             flash = flash
         )
 
