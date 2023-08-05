@@ -21,5 +21,5 @@ loss = pali(
     src_prepend_embeds=img_embeds # will prepend image embeddings
 )
 
-loss.backward()
+print(loss.backward())
 
