@@ -15,4 +15,6 @@ img_embeds = vit_module.process(img)
 
 loss = pali_module.process(prompt, output_text, prompt_mask, img_embeds)
 
-loss.backward()
+loss = loss.backward()
+print(f'loss: {loss}')
+
