@@ -1,8 +1,8 @@
-import torch
 from pali.transformer import ViTransformerWrapper, Encoder, XTransformer
 
-class ViTModule:
-    def __init__(self, image_size=256, patch_size=32, dim=512, depth=6, heads=8, *args, **kwargs):
+class VitModel:
+    def __init__(self, image_size=256, patch_size=32, dim=512, 
+                 depth=6, heads=8, *args, **kwargs):
         self.vit = ViTransformerWrapper(
             image_size=image_size,
             patch_size=patch_size,
@@ -20,10 +20,11 @@ class ViTModule:
             raise ValueError('Input image must have the shape [*, 3, {}, {}]'.format(self.image_size, self.image_size))
         
         return self.vit(img, return_embeddings=True)
-
-
+    
 class Pali:
-    def __init__(self, dim=512, enc_num_tokens=256, enc_depth=6, enc_heads=8, enc_max_seq_len=1024, dec_num_tokens=256, dec_depth=6, dec_heads=8, dec_max_seq_len=1024):
+    def __init__(self, dim=512, enc_num_tokens=256, enc_depth=6, enc_heads=8, 
+                 enc_max_seq_len=1024, dec_num_tokens=256, dec_depth=6, 
+                 dec_heads=8, dec_max_seq_len=1024):
         self.pali = XTransformer(
             dim=dim,
             enc_num_tokens=enc_num_tokens,

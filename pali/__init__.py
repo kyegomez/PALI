@@ -1,1 +1,1 @@
-from pali.model import ViTModule, Pali
+from pali.model import VitModel, Pali
