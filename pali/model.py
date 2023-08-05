@@ -1,5 +1,5 @@
 import torch
-from optimus_prime import ViTransformerWrapper, XTransformer, Encoder, AndromedaEmbedding
+from optimus_prime.x_transformer import ViTransformerWrapper, XTransformer, Encoder
 
 #pali composes of 
 #1, vision transformer 

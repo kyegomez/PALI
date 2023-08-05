@@ -1,17 +1,6 @@
 # Pali: A Multimodal Model
+Pali is a powerful, state-of-the-art multimodal model designed to process and generate responses from both text and image inputs. By combining the text processing prowess of MT5 and image processing capabilities of ViT (Vision Transformer), Pali offers an enhanced understanding of multimodal data. 
 
-## Introduction
-
-Pali is a powerful, state-of-the-art multimodal model designed to process and generate responses from both text and image inputs. By combining the text processing prowess of MT5 and image processing capabilities of ViT (Vision Transformer), Pali offers an enhanced understanding of multimodal data. This model was developed by [kyegomez](https://github.com/kyegomez) and this README provides a comprehensive guide on how to install, understand, and use it.
-
-## Value Proposition
-
-Pali delivers a transformative approach to multimodal understanding, opening up new possibilities for applications and research. 
-
-- **Maximized Outcome**: By leveraging two leading models (MT5 for text, ViT for images), Pali offers superior multimodal understanding, potentially leading to enhanced performance in numerous applications.
-- **High Perceived Likelihood of Success**: Built upon tested and proven architectures (MT5 and ViT), the likelihood of achieving successful results with Pali is high.
-- **Minimized Time to Success**: With an easy installation process and clear usage instructions, you can start working with Pali quickly.
-- **Minimal Effort & Sacrifice**: Pali handles the complexities of multimodal data, simplifying your data processing pipeline. 
 
 ## Installation
 
@@ -51,6 +40,16 @@ loss = pali(
 loss.backward()
 
 ```
+
+## Value Proposition
+
+Pali delivers a transformative approach to multimodal understanding, opening up new possibilities for applications and research. 
+
+- **Maximized Outcome**: By leveraging two leading models (MT5 for text, ViT for images), Pali offers superior multimodal understanding, potentially leading to enhanced performance in numerous applications.
+- **High Perceived Likelihood of Success**: Built upon tested and proven architectures (MT5 and ViT), the likelihood of achieving successful results with Pali is high.
+- **Minimized Time to Success**: With an easy installation process and clear usage instructions, you can start working with Pali quickly.
+- **Minimal Effort & Sacrifice**: Pali handles the complexities of multimodal data, simplifying your data processing pipeline. 
+
 
 ## Model Architecture
 
