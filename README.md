@@ -15,8 +15,11 @@ Here's an example of how to use the Pali model:
 
 ```python
 import torch
-from pali.model import vit, pali
+from pali.model import VitModel, Pali
 
+# usage
+vit_module = VitModel()
+pali_module = Pali()
 
 #training data
 img = torch.randn(1, 3, 256, 256)
@@ -24,20 +27,15 @@ prompt = torch.randint(0, 256, (1, 1024)) # prompt
 prompt_mask = torch.ones(1, 1024).bool()
 output_text = torch.randint(0, 256, (1, 1024)) #target output text
 
-#train
-img_embeds = vit(
-    img, 
-    return_embeddings=True
-)
+img_embeds = vit_module.process(img)
+print(f"Image embeds: {img_embeds}")
 
-loss = pali(
-    prompt,
-    output_text,
-    mask=prompt_mask,
-    src_prepend_embeds=img_embeds # will prepend image embeddings
-)
+loss = pali_module.process(prompt, output_text, prompt_mask, img_embeds)
 
-loss.backward()
+loss = loss.backward()
+print(f'loss: {loss}')
+
+
 
 ```
 
