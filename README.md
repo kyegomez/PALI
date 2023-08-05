@@ -2,6 +2,9 @@
 Pali is a powerful, state-of-the-art multimodal model designed to process and generate responses from both text and image inputs. By combining the text processing prowess of MT5 and image processing capabilities of ViT (Vision Transformer), Pali offers an enhanced understanding of multimodal data. 
 
 
+## Appreciation
+* LucidRains for providing x_transformers and leading open source AI.
+
 ## Installation
 
 Pali can be installed via pip:
