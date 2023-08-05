@@ -14,8 +14,8 @@ from typing import List
 from einops import rearrange, repeat, reduce
 from einops.layers.torch import Rearrange
 
-from x_transformers.attend import Attend, Intermediates, CascadingHeads
-from x_transformers.autoregressive_wrapper import AutoregressiveWrapper
+from pali.attend import Attend, Intermediates, CascadingHeads
+from pali.autoregressive_wrapper import AutoregressiveWrapper
 
 # constants
 
