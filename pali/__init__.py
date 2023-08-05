@@ -1,1 +1,1 @@
-from pali.model import PaliTokenizer, Pali
+from pali.model import Pali
