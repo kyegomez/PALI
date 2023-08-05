@@ -18,6 +18,7 @@ print(output_text.shape)
 #train
 img_embeds = VitModel(
     img, 
+    image_size=128,
     return_embeddings=True
 )
 
