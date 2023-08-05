@@ -1,1 +1,1 @@
-from pali.model import Pali
+from pali.model import pali
