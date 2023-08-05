@@ -1,5 +1,5 @@
 import torch
-from pali.transformer import ViTransformerWrapper, Encoder, XTransformer, AndromedaEmbedding
+from pali.transformer import ViTransformerWrapper, Encoder, XTransformer
 #pali composes of 
 #1, vision transformer 
 #2. Encoder decoder transformer(X transform)
@@ -18,7 +18,6 @@ pali = XTransformer(
     dim=512,
     enc_num_tokens=256,
     enc_depth=6,
-    embedding_provider=AndromedaEmbedding(),
     enc_heads=8,
     enc_max_seq_len=1024,
     dec_num_tokens=256,
