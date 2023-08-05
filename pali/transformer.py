@@ -1227,7 +1227,7 @@ class ViTransformerWrapper(nn.Module):
     ):
         super().__init__()
         assert isinstance(attn_layers, Encoder), 'attention layers must be an Encoder'
-        assert image_size % patch_size == 0, 'image dimensions must be divisible by the patch size'
+        # assert image_size % patch_size == 0, 'image dimensions must be divisible by the patch size'
         dim = attn_layers.dim
         num_patches = (image_size // patch_size) ** 2
         patch_dim = channels * patch_size ** 2
