@@ -1,1 +1,1 @@
-from pali.model import vit, pali, 
+from pali.model import vit, pali
