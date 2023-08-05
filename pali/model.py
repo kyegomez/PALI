@@ -2,7 +2,7 @@ import torch
 from pali.transformer import ViTransformerWrapper, Encoder, XTransformer
 
 class ViTModule:
-    def __init__(self, image_size=256, patch_size=32, dim=512, depth=6, heads=8):
+    def __init__(self, image_size=256, patch_size=32, dim=512, depth=6, heads=8, *args, **kwargs):
         self.vit = ViTransformerWrapper(
             image_size=image_size,
             patch_size=patch_size,
