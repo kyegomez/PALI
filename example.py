@@ -1,5 +1,5 @@
 import torch
-from pali.model import vit, pali
+from pali.model import ViTModule, Pali
 
 
 #training data
@@ -16,12 +16,12 @@ output_text = torch.randint(0, 256, (1, 1024)) #target output text
 print(output_text)
 
 #train
-img_embeds = vit(
+img_embeds = ViTModule(
     img, 
     return_embeddings=True
 )
 
-loss = pali(
+loss = Pali(
     prompt,
     output_text,
     mask=prompt_mask,
