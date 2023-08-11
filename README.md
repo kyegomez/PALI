@@ -1,90 +1,149 @@
-# Pali: A Multimodal Model
-Pali is a powerful, state-of-the-art multimodal model designed to process and generate responses from both text and image inputs. By combining the text processing prowess of MT5 and image processing capabilities of ViT (Vision Transformer), Pali offers an enhanced understanding of multimodal data. 
+# Pali: A Multimodal Marvel! 🚀🤖
+🙌 Dive into the world of Pali, a rockstar model that's got the chops to groove to both text and image tunes! By blending the magic of MT5 📜 and ViT 🖼️, Pali is here to redefine multimodal data vibes.
 
+## 🌟 Special Shoutout 
+Big bear hugs 🐻💖 to *LucidRains* for the fab x_transformers and for championing the open source AI cause.
 
-## Appreciation
-* LucidRains for providing x_transformers and leading open source AI.
+## 🚀 Quick Start
 
-## Installation
-
-Pali can be installed via pip:
-
+Wanna hang with Pali? 🎉 Get set up in a jiffy:
 ```bash
 pip install pali-torch
 ```
 
-# Usage
-Here's an example of how to use the Pali model:
+## 🧙 Usage Magic
 
+Wield the Pali wand with this nifty spell:
 ```python
 import torch
 from pali.model import VitModel, Pali
 
-# usage
+# Prep the stage
 vit_module = VitModel()
 pali_module = Pali()
 
-#training data
+# Ready your spell ingredients
 img = torch.randn(1, 3, 256, 256)
 prompt = torch.randint(0, 256, (1, 1024)) # prompt
 prompt_mask = torch.ones(1, 1024).bool()
 output_text = torch.randint(0, 256, (1, 1024)) #target output text
 
+# Cast the first spell
 img_embeds = vit_module.process(img)
-print(f"Image embeds: {img_embeds}")
+print(f"🎩 Image Magic: {img_embeds}")
 
+# Cast the grand spell
 loss = pali_module.process(prompt, output_text, prompt_mask, img_embeds)
-
 loss = loss.backward()
-print(f'loss: {loss}')
-
-
-
+print(f'🔮 Loss Potion: {loss}')
 ```
 
-## Value Proposition
+## 🎉 Pali's Superpowers
 
-Pali delivers a transformative approach to multimodal understanding, opening up new possibilities for applications and research. 
+Why Pali, you ask? 🤷‍♂️ Check out its fab features:
+- **Double the Power**: MT5 for text and ViT for images - Pali's the superhero we didn't know we needed! 💪📖🖼️
+- **Winning Streak**: With roots in the tried-and-true MT5 & ViT, success is in Pali's DNA. 🏆
+- **Ready, Set, Go**: No fuss, no muss! Get Pali rolling in no time. ⏱️
+- **Easy-Peasy**: Leave the heavy lifting to Pali and enjoy your smooth sailing. 🛳️
 
-- **Maximized Outcome**: By leveraging two leading models (MT5 for text, ViT for images), Pali offers superior multimodal understanding, potentially leading to enhanced performance in numerous applications.
-- **High Perceived Likelihood of Success**: Built upon tested and proven architectures (MT5 and ViT), the likelihood of achieving successful results with Pali is high.
-- **Minimized Time to Success**: With an easy installation process and clear usage instructions, you can start working with Pali quickly.
-- **Minimal Effort & Sacrifice**: Pali handles the complexities of multimodal data, simplifying your data processing pipeline. 
+## 📐 Model Blueprint
 
+Think of Pali as a swanky cocktail 🍹 - MT5 brings the text zest while ViT adds the image zing. Together, they craft a blend that’s pure magic! Whether it's MT5's adaptability or ViT's image smarts, Pali packs a punch. 🥊
 
-## Model Architecture
+## 🌆 Where Pali Shines
 
-Pali combines the MT5 and ViT models to create a comprehensive, multimodal model. 
+- **E-commerce**: Jazz up those recs! Understand products inside-out with images & descriptions. 🛍️
+- **Social Media**: Be the smart reply guru for posts with pics & captions. 📱
+- **Healthcare**: Boost diagnostics with insights from images & textual data. 🏥
 
-MT5 (a text-to-text transformer model) is used for processing text. The power of MT5 lies in its ability to handle different tasks with a simple change in the task's prefix, making it incredibly flexible.
+# Contributing to Pali 🤖🌟
 
-ViT (Vision Transformer), on the other hand, is used for processing images. ViT treats image patches as sequences of data, similar to text, allowing the model to apply transformers to image processing.
+First off, big high fives 🙌 and thank you for considering a contribution to Pali! Your help and enthusiasm can truly elevate this project. Whether you're fixing bugs 🐛, adding features 🎁, or just providing feedback, every bit matters! Here's a step-by-step guide to make your contribution journey smooth:
 
-In Pali, the output of the ViT model is used as the encoder outputs for the MT5 model. This combination allows Pali to leverage the strengths of both models, offering a powerful approach to multimodal understanding.
+## 1. Set the Stage 🎬
 
-## Commercial Use Cases
+**Fork the Repository:** Before you dive in, create a fork of the Pali repository. This gives you your own workspace where you can make changes without affecting the main project.
 
-Pali's unique design makes it highly suitable for a variety of commercial applications:
+1. Go to the top right corner of the Pali repo.
+2. Click on the "Fork" button. 
 
-- **E-commerce**: Pali can be used to improve product recommendation systems by understanding both product images and descriptions.
-- **Social Media**: Understanding and generating responses for posts containing both text and images.
-- **Healthcare**: Analyzing medical images and associated text data for improved diagnostics.
+Boom! You now have a copy on your GitHub account.
 
-## Contributing
+## 2. Clone & Set Up 🚀
 
-Contributions to Pali are welcome! Please feel free to open an issue or pull request on the GitHub repository.
+**Clone Your Fork:** 
+```bash
+git clone https://github.com/YOUR_USERNAME/pali.git
+cd pali
+```
 
-## License
+**Connect with the Main Repo:** To fetch updates from the main Pali repository, set it up as a remote:
+```bash
+git remote add upstream https://github.com/original_pali_repo/pali.git
+```
 
-Pali is provided under the MIT License. See the LICENSE file for details.
+## 3. Make Your Magic ✨
 
-## Contact
+Create a new branch for your feature, bugfix, or whatever you're looking to contribute:
+```bash
+git checkout -b feature/my-awesome-feature
+```
 
-If you have any questions or issues, please open a GitHub issue or reach out to [kyegomez](https://github.com/kyegomez).
+Now, dive into the code and sprinkle your magic!
 
-## Citation
-If you use this code or use our pre-trained model, please cite the PaLI paper:
+## 4. Stay Updated 🔄
 
+While you're working, the main Pali repository might have updates. Keep your local copy in sync:
+
+```bash
+git fetch upstream
+git merge upstream/main
+```
+
+## 5. Share Your Brilliance 🎁
+
+Once you've made your changes:
+
+1. **Stage & Commit:**
+   ```bash
+   git add .
+   git commit -m "Add my awesome feature"
+   ```
+
+2. **Push to Your Fork:**
+   ```bash
+   git push origin feature/my-awesome-feature
+   ```
+
+3. **Create a Pull Request:** Head back to your fork on GitHub, and you'll see a "New Pull Request" button. Click on it!
+
+## 6. The Review Dance 💃🕺
+
+Once your PR is submitted, our Pali team will review it. They might have questions or feedback. Stay engaged, discuss, and make any needed changes. Collaboration is key! 🤝
+
+## 7. Celebrate & Wait 🎉
+
+After review and any necessary tweaks, your contribution will be merged. Pat yourself on the back and celebrate! 🎊
+
+## 8. Spread the Word 📢
+
+Share about your contribution with your network. The more the merrier! Plus, it feels good to show off a bit, right? 😉
+
+Remember, every contribution, no matter how small or large, is valued and appreciated. It's the collective effort that makes open-source so vibrant and impactful. Thanks for being a part of the Pali adventure! 🌟🚀
+
+----
+
+## 📜 The Legal Stuff
+
+Pali grooves under the MIT License. Dive into the [LICENSE](LICENSE) for all the deets.
+
+## 💌 Drop Us A Line
+
+Got Qs? 🤔 Ping us with an issue or visit our superstar [kyegomez](https://github.com/kyegomez) on GitHub.
+
+## 📚 Study Up!
+
+Using Pali in your groundbreaking work? Give us a shoutout! 📢
 ```
 @inproceedings{chen2022pali,
   title={PaLI: Scaling Language-Image Learning in 100+ Languages},
@@ -93,3 +152,5 @@ If you use this code or use our pre-trained model, please cite the PaLI paper:
   year={2022}
 }
 ```
+
+Let's co-create, learn, and grow with Pali! 🌱🚀🎉
