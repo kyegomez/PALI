@@ -11,9 +11,7 @@ Wanna hang with Pali? 🎉 Get set up in a jiffy:
 pip install pali-torch
 ```
 
-## 🧙 Usage Magic
-
-Wield the Pali wand with this nifty spell:
+## 🧙 Usage 
 ```python
 import torch
 from pali.model import VitModel, Pali
