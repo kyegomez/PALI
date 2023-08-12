@@ -12,7 +12,7 @@
 [![Share on WhatsApp](https://img.shields.io/badge/-Share%20on%20WhatsApp-green)](https://api.whatsapp.com/send?text=I%20just%20discovered%20pali,%20the%20all-new%20robotics%20model%20that%20promises%20to%20revolutionize%20automation.%20Join%20me%20on%20this%20exciting%20journey%20towards%20a%20smarter%20future.%20%23RT1%20%23Robotics%0A%0Ahttps%3A%2F%2Fgithub.com%2Fkyegomez%2Fpali)
 
 
-🙌 Dive into the world of Pali, a rockstar model that's got the chops to groove to both text and image tunes! By blending the magic of MT5 📜 and ViT 🖼️, Pali is here to redefine multimodal data vibes.
+The open source implementation of the Multi-Modality AI model from "PaLI: Scaling Language-Image Learning in 100+ Languages"
 
 ## 🌟 Special Shoutout 
 Big bear hugs 🐻💖 to *LucidRains* for the fab x_transformers and for championing the open source AI cause.
