@@ -45,8 +45,6 @@ print(f'🔮 Loss {loss}')
 ```
 
 ## 🎉 Features
-
-Why Pali, you ask? 🤷‍♂️ Check out its fab features:
 - **Double the Power**: MT5 for text and ViT for images - Pali's the superhero we didn't know we needed! 💪📖🖼️
 - **Winning Streak**: With roots in the tried-and-true MT5 & ViT, success is in Pali's DNA. 🏆
 - **Ready, Set, Go**: No fuss, no muss! Get Pali rolling in no time. ⏱️
