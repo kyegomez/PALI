@@ -1,4 +1,4 @@
-# Pali: A Multimodal Marvel! 🚀🤖
+# Pali: A Multimodal Model
 
 [![GitHub issues](https://img.shields.io/github/issues/kyegomez/pali)](https://github.com/kyegomez/pali/issues) 
 [![GitHub forks](https://img.shields.io/github/forks/kyegomez/pali)](https://github.com/kyegomez/pali/network) 
@@ -19,7 +19,6 @@ Big bear hugs 🐻💖 to *LucidRains* for the fab x_transformers and for champi
 
 ## 🚀 Quick Start
 
-Wanna hang with Pali? 🎉 Get set up in a jiffy:
 ```bash
 pip install pali-torch
 ```
@@ -29,27 +28,23 @@ pip install pali-torch
 import torch
 from pali.model import VitModel, Pali
 
-# Prep the stage
 vit_module = VitModel()
 pali_module = Pali()
 
-# Ready your spell ingredients
 img = torch.randn(1, 3, 256, 256)
 prompt = torch.randint(0, 256, (1, 1024)) # prompt
 prompt_mask = torch.ones(1, 1024).bool()
 output_text = torch.randint(0, 256, (1, 1024)) #target output text
 
-# Cast the first spell
 img_embeds = vit_module.process(img)
 print(f"🎩 Image Magic: {img_embeds}")
 
-# Cast the grand spell
 loss = pali_module.process(prompt, output_text, prompt_mask, img_embeds)
 loss = loss.backward()
-print(f'🔮 Loss Potion: {loss}')
+print(f'🔮 Loss {loss}')
 ```
 
-## 🎉 Pali's Superpowers
+## 🎉 Features
 
 Why Pali, you ask? 🤷‍♂️ Check out its fab features:
 - **Double the Power**: MT5 for text and ViT for images - Pali's the superhero we didn't know we needed! 💪📖🖼️
@@ -61,7 +56,7 @@ Why Pali, you ask? 🤷‍♂️ Check out its fab features:
 
 Think of Pali as a swanky cocktail 🍹 - MT5 brings the text zest while ViT adds the image zing. Together, they craft a blend that’s pure magic! Whether it's MT5's adaptability or ViT's image smarts, Pali packs a punch. 🥊
 
-## 🌆 Where Pali Shines
+## 🌆 Real-World Use-Cases
 
 - **E-commerce**: Jazz up those recs! Understand products inside-out with images & descriptions. 🛍️
 - **Social Media**: Be the smart reply guru for posts with pics & captions. 📱
@@ -132,7 +127,7 @@ Once you've made your changes:
 
 Once your PR is submitted, our Pali team will review it. They might have questions or feedback. Stay engaged, discuss, and make any needed changes. Collaboration is key! 🤝
 
-## 7. Celebrate & Wait 🎉
+## 7. Celebrate 🎉
 
 After review and any necessary tweaks, your contribution will be merged. Pat yourself on the back and celebrate! 🎊
 
@@ -144,7 +139,7 @@ Remember, every contribution, no matter how small or large, is valued and apprec
 
 ----
 
-## 📜 The Legal Stuff
+## 📜 License
 
 Pali grooves under the MIT License. Dive into the [LICENSE](LICENSE) for all the deets.
 
@@ -152,9 +147,8 @@ Pali grooves under the MIT License. Dive into the [LICENSE](LICENSE) for all the
 
 Got Qs? 🤔 Ping us with an issue or visit our superstar [kyegomez](https://github.com/kyegomez) on GitHub.
 
-## 📚 Study Up!
+## 📚 Citation
 
-Using Pali in your groundbreaking work? Give us a shoutout! 📢
 ```
 @inproceedings{chen2022pali,
   title={PaLI: Scaling Language-Image Learning in 100+ Languages},
