@@ -53,10 +53,6 @@ print(f'🔮 Loss {loss}')
 - **Ready, Set, Go**: No fuss, no muss! Get Pali rolling in no time. ⏱️
 - **Easy-Peasy**: Leave the heavy lifting to Pali and enjoy your smooth sailing. 🛳️
 
-## 📐 Model Blueprint
-
-Think of Pali as a swanky cocktail 🍹 - MT5 brings the text zest while ViT adds the image zing. Together, they craft a blend that’s pure magic! Whether it's MT5's adaptability or ViT's image smarts, Pali packs a punch. 🥊
-
 ## 🌆 Real-World Use-Cases
 
 - **E-commerce**: Jazz up those recs! Understand products inside-out with images & descriptions. 🛍️
@@ -80,13 +76,8 @@ Boom! You now have a copy on your GitHub account.
 
 **Clone Your Fork:** 
 ```bash
-git clone https://github.com/YOUR_USERNAME/pali.git
+git clone https://github.com/kyegomez/pali.git
 cd pali
-```
-
-**Connect with the Main Repo:** To fetch updates from the main Pali repository, set it up as a remote:
-```bash
-git remote add upstream https://github.com/original_pali_repo/pali.git
 ```
 
 ## 3. Make Your Magic ✨
