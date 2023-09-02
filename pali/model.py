@@ -47,6 +47,7 @@ class Pali:
             dec_heads=8, 
             dec_max_seq_len=1024
         ):
+        super().__init__()
         self.pali = XTransformer(
             dim=dim,
             enc_num_tokens=enc_num_tokens,
@@ -59,7 +60,13 @@ class Pali:
             dec_max_seq_len=dec_max_seq_len
         )
 
-    def process(self, prompt, output_text, mask, img_embeds):
+    def process(
+            self, 
+            prompt, 
+            output_text, 
+            mask, 
+            img_embeds
+        ):
         if prompt is None or output_text is None or mask is None or img_embeds is None:
             raise ValueError('None of the input parameters can be None')
 
