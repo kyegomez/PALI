@@ -35,9 +35,18 @@ class VitModel:
         return self.vit(img, return_embeddings=True)
     
 class Pali:
-    def __init__(self, dim=512, enc_num_tokens=256, enc_depth=6, enc_heads=8, 
-                 enc_max_seq_len=1024, dec_num_tokens=256, dec_depth=6, 
-                 dec_heads=8, dec_max_seq_len=1024):
+    def __init__(
+            self, 
+            dim=512, 
+            enc_num_tokens=256, 
+            enc_depth=6, 
+            enc_heads=8, 
+            enc_max_seq_len=1024, 
+            dec_num_tokens=256, 
+            dec_depth=6, 
+            dec_heads=8, 
+            dec_max_seq_len=1024
+        ):
         self.pali = XTransformer(
             dim=dim,
             enc_num_tokens=enc_num_tokens,

@@ -14,8 +14,9 @@ output_text = torch.randint(0, 256, (1, 1024)) #target output text
 img_embeds = vit_module.process(img)
 print(f"Image embeds: {img_embeds}")
 
-loss = pali_module.process(prompt, output_text, prompt_mask, img_embeds)
+result = pali_module.process(prompt, output_text, prompt_mask, img_embeds)
+print(result)
 
-loss = loss.backward()
-print(f'loss: {loss}')
+result = result.backward()
+print(f'Result: {result}')
 
