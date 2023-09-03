@@ -1,4 +1,3 @@
-import torch
 from pali.transformer import ViTransformerWrapper, Encoder, XTransformer
 
 class VitModel:
@@ -34,7 +33,7 @@ class VitModel:
         
         return self.vit(img, return_embeddings=True)
     
-class Pali:
+class Transformer:
     def __init__(
             self, 
             dim=512, 
@@ -76,6 +75,57 @@ class Pali:
             mask=mask,
             src_prepend_embeds=img_embeds
         )
+    
+
+
+
+class Pali:
+    def __init__(
+        self,
+        image_size=256,
+        patch_size=32,
+        dim=512,
+        depth=6,
+        heads=8,
+        enc_num_tokens=256,
+        enc_max_seq_len=1024,
+        dec_num_tokens=256,
+        dec_max_seq_len=1024
+    ):
+        self.vit_model = VitModel(
+            image_size=image_size,
+            patch_size=patch_size,
+            dim=dim,
+            depth=depth,
+            heads=heads
+        )
+
+        self.pali_model = Transformer(
+            dim=dim,
+            enc_num_tokens=enc_num_tokens,
+            enc_depth=depth,
+            enc_heads=heads,
+            enc_max_seq_len=enc_max_seq_len,
+            dec_num_tokens=dec_num_tokens,
+            dec_depth=depth,
+            dec_heads=heads,
+            dec_max_seq_len=dec_max_seq_len
+        )
+
+    def process(
+        self,
+        img,
+        prompt,
+        output,
+        mask
+    ):
+        img_embeds = self.vit_model.process(img)
+        result = self.pali_model.process(prompt, output, mask, img_embeds)
+        return result
+
+
+
+
 
 # # usage
 # vit_module = ViTModule()

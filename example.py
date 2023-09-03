@@ -1,22 +1,15 @@
 import torch
-from pali.model import VitModel, Pali
+from pali.model import Pali
 
-# usage
-vit_module = VitModel()
-pali_module = Pali()
+model = Pali()
 
-#training data
 img = torch.randn(1, 3, 256, 256)
-prompt = torch.randint(0, 256, (1, 1024)) # prompt
-prompt_mask = torch.ones(1, 1024).bool()
-output_text = torch.randint(0, 256, (1, 1024)) #target output text
+prompt = torch.randint(0, 256, (1, 1024))
+mask = torch.ones(1, 1024).bool()
+output_text = torch.randint(0, 256, (1, 1024))
 
-img_embeds = vit_module.process(img)
-print(f"Image embeds: {img_embeds}")
-
-result = pali_module.process(prompt, output_text, prompt_mask, img_embeds)
+result = model.process(img, prompt, output_text, mask)
 print(result)
 
 result = result.backward()
-print(f'Result: {result}')
-
+print(result)
