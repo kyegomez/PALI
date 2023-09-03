@@ -31,11 +31,9 @@ from pali.model import Pali
 #     result = pali.process(None, prompt, output_text, None)
 #     print(f"Generated text for prompt {i+1}: ", result)
 
+pali = Pali()
 
-# Example Usage:
-model_name = "gpt2" # specify the model name or path
-pali = Pali(model_name=model_name)
-
-prompt_text = "Once upon a time"
-generated_text = pali.generate(prompt_text)
+prompt_text = "say hi to Kye"
+model_name = "t5-small" # specify the model name or path
+generated_text = pali.generate(prompt_text, model_name=model_name)
 print(generated_text)
