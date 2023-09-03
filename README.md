@@ -73,6 +73,7 @@ The key datasets used for pre-training PaLI include:
 
 The model was evaluated on diverse tasks using standard datasets like VQAv2, Open Images, COCO Captions etc. Links and details provided above.
 
+----
 
 # Todo
 
@@ -80,12 +81,14 @@ The model was evaluated on diverse tasks using standard datasets like VQAv2, Ope
 - [ ] Provide training script
 - [ ] Provide usage/inference scripts
 
+----
 
 ## 🎉 Features
 - **Double the Power**: MT5 for text and ViT for images - Pali's the superhero we didn't know we needed! 💪📖🖼️
 - **Winning Streak**: With roots in the tried-and-true MT5 & ViT, success is in Pali's DNA. 🏆
 - **Ready, Set, Go**: No fuss, no muss! Get Pali rolling in no time. ⏱️
 - **Easy-Peasy**: Leave the heavy lifting to Pali and enjoy your smooth sailing. 🛳️
+
 
 ## 🌆 Real-World Use-Cases
 
@@ -97,6 +100,8 @@ The model was evaluated on diverse tasks using standard datasets like VQAv2, Ope
 
 ## 📜 License
 MIT
+
+----
 
 ## 📚 Citation
 
