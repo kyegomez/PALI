@@ -1,7 +1,7 @@
 [![Multi-Modality](agorabanner.png)](https://discord.gg/qUtxnK2NMf)
 
 
-# Pali: A Multimodal Model
+# PALI: A JOINTLY-SCALED MULTILINGUAL LANGUAGE-IMAGE MODEL
 ![pali](pali.png)
 
 [![GitHub issues](https://img.shields.io/github/issues/kyegomez/pali)](https://github.com/kyegomez/pali/issues) 
