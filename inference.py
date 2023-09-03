@@ -1,8 +1,8 @@
 import torch
 from pali.model import Pali
 
-# Initialize Pali model
-pali = Pali()
+# # Initialize Pali model
+# pali = Pali()
 
 # Example 1: Caption an Image
 # # Load images
@@ -18,15 +18,24 @@ pali = Pali()
 #     print(f"Caption for image {i+1}: ", result)
 
 
-# # Example 2: Generate text based on another piece of text
-# Define prompt texts
-prompt_texts = ["Once upon a time", "In a galaxy far, far away", "It was a dark and stormy night"]
+# # # Example 2: Generate text based on another piece of text
+# # Define prompt texts
+# prompt_texts = ["Once upon a time", "In a galaxy far, far away", "It was a dark and stormy night"]
 
-for i, prompt_text in enumerate(prompt_texts):
-    prompt = torch.tensor([ord(c) for c in prompt_text]).unsqueeze(0)
+# for i, prompt_text in enumerate(prompt_texts):
+#     prompt = torch.tensor([ord(c) for c in prompt_text]).unsqueeze(0)
     
-    # Generate text based on the prompt
-    output_text = torch.randint(0, 256, (1, 1024))
+#     # Generate text based on the prompt
+#     output_text = torch.randint(0, 256, (1, 1024))
     
-    result = pali.process(None, prompt, output_text, None)
-    print(f"Generated text for prompt {i+1}: ", result)
+#     result = pali.process(None, prompt, output_text, None)
+#     print(f"Generated text for prompt {i+1}: ", result)
+
+
+# Example Usage:
+model_name = "gpt2" # specify the model name or path
+pali = Pali(model_name=model_name)
+
+prompt_text = "Once upon a time"
+generated_text = pali.generate(prompt_text)
+print(generated_text)

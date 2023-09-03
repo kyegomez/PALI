@@ -1,4 +1,6 @@
+import torch
 from pali.transformer import ViTransformerWrapper, Encoder, XTransformer
+from transformers import AutoTokenizer
 
 class VitModel:
     def __init__(self, 
@@ -82,6 +84,7 @@ class Transformer:
 class Pali:
     def __init__(
         self,
+        model_name,
         image_size=256,
         patch_size=32,
         dim=512,
@@ -92,6 +95,7 @@ class Pali:
         dec_num_tokens=256,
         dec_max_seq_len=1024
     ):
+        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
         self.vit_model = VitModel(
             image_size=image_size,
             patch_size=patch_size,
@@ -122,17 +126,28 @@ class Pali:
         img_embeds = self.vit_model.process(img)
         result = self.pali_model.process(prompt, output, mask, img_embeds)
         return result
-    
+
     def generate(
         self,
         text,
         seq_len=1024,
         mask=None,
-        attn_Mask=None
+        attn_mask=None
     ):
-        self.pali_model.generate()
+        """
+        model_name = "gpt3"
+        pali = Pali(model_name)
 
-
+        prompt = "say hi to Kye"
+        generated_text = pali.generate(prompt)
+        print(generated_tex)
+        
+        """
+        inputs = self.tokenizer.encode(text, return_tensors="pt")
+        seq_out_start = torch.zeros(1, 1).long()
+        result = self.pali_model.pali.generate(inputs, seq_out_start, seq_len, mask, attn_mask)
+        result_text = self.tokenizer.decode(result[0], skip_special_tokens=True)
+        return result_text
 
 
 
