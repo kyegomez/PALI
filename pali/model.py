@@ -122,6 +122,15 @@ class Pali:
         img_embeds = self.vit_model.process(img)
         result = self.pali_model.process(prompt, output, mask, img_embeds)
         return result
+    
+    def generate(
+        self,
+        text,
+        seq_len=1024,
+        mask=None,
+        attn_Mask=None
+    ):
+        self.pali_model.generate()
 
 
 
