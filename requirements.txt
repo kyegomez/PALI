@@ -1,3 +1,4 @@
-primus
 torch
+einops
 transformers
+dataclasses

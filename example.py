@@ -1,5 +1,5 @@
 import torch
-from pali.model import Pali
+from pali import Pali
 
 model = Pali()
 
