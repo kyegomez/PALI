@@ -46,6 +46,34 @@ print(result)
 ```
 ----
 
+# Datasets Strategy
+Dataset strategy as closely shown in the paper.
+
+Here is a markdown table with metadata and links to the datasets on HuggingFace for the datasets used:
+
+| Dataset | Description | Size | Languages | Link |
+|-|-|-|-|-|  
+| WebLI | Large-scale web crawled image-text dataset | 10B images, 12B captions | 109 languages | Private |
+| CC3M | Conceptual Captions dataset | 3M image-text pairs | English | [Link](https://huggingface.co/datasets/conceptual_captions) |  
+| CC3M-35L | Translated version of CC3M to 35 languages | 105M image-text pairs | 36 languages | Private |
+| VQAv2 | VQA dataset built on COCO images | 204K images, 1.1M QA pairs | English | [Link](https://huggingface.co/datasets/vqa_v2) |  
+| VQ2A-CC3M | VQA dataset built from CC3M | 3M image-text pairs | English | Private | 
+| VQ2A-CC3M-35L | Translated version of VQ2A-CC3M to 35 languages | 105M image-text pairs | 36 languages | Private |
+| Open Images | Large scale image dataset | 9M images with labels | English | [Link](https://huggingface.co/datasets/open_images_v4) |
+| Visual Genome | Image dataset with dense annotations | 108K images with annotations | English | [Link](https://huggingface.co/datasets/visual_genome) |
+| Object365 | Image dataset for object detection | 500K images with labels | English | Private |
+
+The key datasets used for pre-training PaLI include:
+
+- WebLI: A large-scale multilingual image-text dataset crawled from the web, comprising 10B images and 12B captions in 109 languages.
+
+- CC3M-35L: CC3M Conceptual Captions dataset machine translated into 35 additional languages, totaling 105M image-text pairs in 36 languages. 
+
+- VQ2A-CC3M-35L: VQA dataset based on CC3M, also translated into 35 languages. 
+
+The model was evaluated on diverse tasks using standard datasets like VQAv2, Open Images, COCO Captions etc. Links and details provided above.
+
+
 # Todo
 
 - [ ] Make a table of datasets used in paper,
