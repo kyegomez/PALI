@@ -31,7 +31,7 @@ pip install pali-torch
 ## 🧙 Usage 
 ```python
 import torch
-from pali.model import Pali
+from pali import Pali
 
 model = Pali()
 
@@ -43,8 +43,6 @@ output_text = torch.randint(0, 256, (1, 1024))
 result = model.process(img, prompt, output_text, mask)
 print(result)
 
-result = result.backward()
-print(result)
 ```
 ----
 
