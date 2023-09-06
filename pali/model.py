@@ -100,7 +100,7 @@ class Pali:
             self.model_name = model_name
         
         if not self.model_name:
-            raise ValueError("model_name must be specidfied either in the class constructor or in the generate method")
+            raise ValueError("model_name must be specified either in the class constructor or in the generate method")
         
         if not self.tokenizer:
             self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
