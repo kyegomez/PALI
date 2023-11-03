@@ -52,7 +52,6 @@ class Pali:
     ):
         self.model_name = model_name
         self.tokenizer = None
-        # self.tokenizer = AutoTokenizer.from_pretrained(model_name)
         self.vit_model = VitModel(
             image_size=image_size,
             patch_size=patch_size,
@@ -73,11 +72,10 @@ class Pali:
             dec_max_seq_len=dec_max_seq_len,
         )
 
-    def process(self, img, prompt, output, mask):
+    def forward(self, img, prompt, output, mask):
         img_embeds = self.vit_model.process(img)
-        result = self.pali_model(
-            prompt, output, mask=mask, src_prepend_embeds=img_embeds
-        )
+        result = self.ul2(prompt, output, mask=mask, src_prepend_embeds=img_embeds)
+
         return result
 
     def generate(self, text, seq_len=1024, mask=None, attn_mask=None, model_name=None):

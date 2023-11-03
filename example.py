@@ -8,5 +8,5 @@ prompt = torch.randint(0, 256, (1, 1024))
 mask = torch.ones(1, 1024).bool()
 output_text = torch.randint(0, 256, (1, 1024))
 
-result = model.process(img, prompt, output_text, mask)
+result = model.forward(img, prompt, output_text, mask)
 print(result)
