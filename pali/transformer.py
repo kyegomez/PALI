@@ -1776,7 +1776,7 @@ class ContinuousTransformerWrapper(nn.Module):
         return out
 
 
-class XTransformer(nn.Module):
+class UL2(nn.Module):
     def __init__(
         self,
         *,

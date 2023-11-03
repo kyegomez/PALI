@@ -1,6 +1,5 @@
 import torch
-from pali.transformer import ViTransformerWrapper, Encoder, XTransformer
-from transformers import AutoTokenizer
+from pali.transformer import ViTransformerWrapper, Encoder, UL2
 
 
 class VitModel:
@@ -19,7 +18,19 @@ class VitModel:
             attn_layers=Encoder(dim=dim, depth=depth, heads=heads),
         )
 
-    def process(self, img):
+    def __call__(self, img):
+        if img is None:
+            raise ValueError("Input image cannot be None")
+        if img.shape[1:] != (3, self.image_size, self.image_size):
+            raise ValueError(
+                "Input image must have the shape [*, 3, {}, {}]".format(
+                    self.image_size, self.image_size
+                )
+            )
+
+        return self.vit(img, return_embeddings=True)
+
+    def forward(self, img):
         if img is None:
             raise ValueError("Input image cannot be None")
         if img.shape[1:] != (3, self.image_size, self.image_size):
@@ -60,7 +71,7 @@ class Pali:
             heads=heads,
         )
 
-        self.pali_model = XTransformer(
+        self.ul2 = UL2(
             dim=dim,
             enc_num_tokens=enc_num_tokens,
             enc_depth=enc_depth,
@@ -73,27 +84,10 @@ class Pali:
         )
 
     def forward(self, img, prompt, output, mask):
-        img_embeds = self.vit_model.process(img)
+        """Get the image embeddings"""
+        img_embeds = self.vit_model.forward(img)
+
+        """Get the output text embeddings"""
         result = self.ul2(prompt, output, mask=mask, src_prepend_embeds=img_embeds)
 
         return result
-
-    def generate(self, text, seq_len=1024, mask=None, attn_mask=None, model_name=None):
-        if model_name:
-            self.model_name = model_name
-
-        if not self.model_name:
-            raise ValueError(
-                "model_name must be specidfied either in the class constructor or in the generate method"
-            )
-
-        if not self.tokenizer:
-            self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
-
-        inputs = self.tokenizer.encode(text, return_tensors="pt")
-        seq_out_start = torch.zeros(1, 1).long()
-        result = self.pali_model.generate(
-            inputs, seq_out_start, seq_len, mask, attn_mask
-        )
-        result_text = self.tokenizer.decode(result[0], skip_special_tokens=True)
-        return result_text
