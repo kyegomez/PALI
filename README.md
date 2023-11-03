@@ -98,11 +98,6 @@ The model was evaluated on diverse tasks using standard datasets like VQAv2, Ope
 
 ----
 
-## 📜 License
-MIT
-
-----
-
 ## 📚 Citation
 
 ```
@@ -120,3 +115,8 @@ MIT
 - [ ] Provide tokenizer integration
 - [ ] Provide training script
 - [ ] Provide usage/inference scripts
+
+----
+
+## 📜 License
+MIT
