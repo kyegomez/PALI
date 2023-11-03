@@ -18,6 +18,11 @@
 
 The open source implementation of the Multi-Modality AI model from ["PaLI: Scaling Language-Image Learning in 100+ Languages"](https://arxiv.org/abs/2209.06794)
 
+# **NOTE**
+  - This is the base model architecture, no tokenizer or pretrained weights
+  - To train, find tokenizer, like tokenmonster and patchify the images to make it compatible with example.py
+  - 
+
 ## 🌟 Appreciation
 Big bear hugs 🐻💖 to *LucidRains* for the fab x_transformers and for championing the open source AI cause.
 
@@ -40,7 +45,7 @@ prompt = torch.randint(0, 256, (1, 1024))
 mask = torch.ones(1, 1024).bool()
 output_text = torch.randint(0, 256, (1, 1024))
 
-result = model.process(img, prompt, output_text, mask)
+result = model.forward(img, prompt, output_text, mask)
 print(result)
 
 ```
@@ -75,11 +80,6 @@ The model was evaluated on diverse tasks using standard datasets like VQAv2, Ope
 
 ----
 
-# Todo
-
-- [ ] Make a table of datasets used in paper,
-- [ ] Provide training script
-- [ ] Provide usage/inference scripts
 
 ----
 
@@ -113,3 +113,10 @@ MIT
   year={2022}
 }
 ```
+
+# Todo
+
+- [x] Make a table of datasets used in paper,
+- [ ] Provide tokenizer integration
+- [ ] Provide training script
+- [ ] Provide usage/inference scripts
