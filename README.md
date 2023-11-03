@@ -22,6 +22,7 @@ The open source implementation of the Multi-Modality AI model from ["PaLI: Scali
   - This is the base model architecture, no tokenizer or pretrained weights
   - To train, find tokenizer, like tokenmonster and patchify the images to make it compatible with example.py
   - We're utilizing an Encoder/Decoder as UL2 and a VIT model that embeds the image which is then injected into the text encoder decoder
+  - If you would like to help train this model and release it open source please click on the agora banner and join the lab!
 
 ## 🌟 Appreciation
 Big bear hugs 🐻💖 to *LucidRains* for the fab x_transformers and for championing the open source AI cause.
