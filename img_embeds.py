@@ -1,9 +1,10 @@
-from pali import VitModel
 from PIL import Image
 from torchvision import transforms
 
+from pali import VitModel
 
-def img_to_tensor(img: str = "pali.png"):
+
+def img_to_tensor(img: str = "pali.png", img_size: int = 256):
     # Load image
     image = Image.open(img)
 
@@ -11,7 +12,7 @@ def img_to_tensor(img: str = "pali.png"):
     transform = transforms.Compose(
         [
             transforms.Lambda(lambda image: image.convert("RGB")),
-            transforms.Resize((256, 256)),  # Resize the image to 256x256
+            transforms.Resize((img_size, img_size)),  # Resize the image to 256x256
             transforms.ToTensor(),  # Convert the image to a tensor,
             transforms.Normalize(
                 mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]
