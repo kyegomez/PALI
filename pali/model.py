@@ -1,4 +1,3 @@
-import torch
 from pali.transformer import ViTransformerWrapper, Encoder, UL2
 
 

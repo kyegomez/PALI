@@ -41,13 +41,36 @@ from pali import Pali
 
 model = Pali()
 
-img = torch.randn(1, 3, 256, 256)
-prompt = torch.randint(0, 256, (1, 1024))
-mask = torch.ones(1, 1024).bool()
-output_text = torch.randint(0, 256, (1, 1024))
+img = torch.randn(1, 3, 256, 256) # Image tensor
+prompt = torch.randint(0, 256, (1, 1024)) # Text integer tensor
+output_text = torch.randint(0, 256, (1, 1024)) # Target Text integer tensor
 
-result = model.forward(img, prompt, output_text, mask)
-print(result)
+out = model.forward(img, prompt, output_text, mask=None)
+
+
+print(out)
+
+```
+
+
+## Vit Image Embedder
+- To embed your images, you can use the vit model:
+
+```python
+import torch
+from pali import VitModel
+
+# Random tensors
+x = torch.randn(1, 3, 256, 256)
+
+# Initialize model
+model = VitModel()
+
+# Forward pass
+out = model(x)
+
+# Print output shape
+print(out.shape)
 
 ```
 ----
