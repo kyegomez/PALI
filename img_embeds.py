@@ -3,19 +3,21 @@ from PIL import Image
 from torchvision import transforms
 
 
-
 def img_to_tensor(img: str = "pali.png"):
     # Load image
     image = Image.open(img)
 
-
     # Define a transforms to convert the image to a tensor and apply preprocessing
-    transform = transforms.Compose([
-        transforms.Lambda(lambda image: image.convert("RGB")),
-        transforms.Resize((256, 256)), # Resize the image to 256x256
-        transforms.ToTensor(), # Convert the image to a tensor,
-        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]) # Normalize the pixel values
-    ])
+    transform = transforms.Compose(
+        [
+            transforms.Lambda(lambda image: image.convert("RGB")),
+            transforms.Resize((256, 256)),  # Resize the image to 256x256
+            transforms.ToTensor(),  # Convert the image to a tensor,
+            transforms.Normalize(
+                mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]
+            ),  # Normalize the pixel values
+        ]
+    )
 
     # apply transforms to the image
     x = transform(image)
