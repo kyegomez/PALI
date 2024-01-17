@@ -16,7 +16,7 @@
 [![Share on WhatsApp](https://img.shields.io/badge/-Share%20on%20WhatsApp-green)](https://api.whatsapp.com/send?text=I%20just%20discovered%20pali,%20the%20all-new%20robotics%20model%20that%20promises%20to%20revolutionize%20automation.%20Join%20me%20on%20this%20exciting%20journey%20towards%20a%20smarter%20future.%20%23RT1%20%23Robotics%0A%0Ahttps%3A%2F%2Fgithub.com%2Fkyegomez%2Fpali)
 
 
-The open source implementation of the Multi-Modality AI model from ["PaLI: Scaling Language-Image Learning in 100+ Languages"](https://arxiv.org/abs/2209.06794)
+The open source implementation of the Multi-Modality AI model from ["PaLI: Scaling Language-Image Learning in 100+ Languages"](https://arxiv.org/abs/2209.06794) The model architecture is text -> encoder -> decoder -> logits -> text. The Vision architecture is image -> vit -> embeddings -> encoder -> decoder -> logits -> text
 
 # **NOTE**
   - This is the base model architecture, no tokenizer or pretrained weights
@@ -27,7 +27,7 @@ The open source implementation of the Multi-Modality AI model from ["PaLI: Scali
 ## 🌟 Appreciation
 Big bear hugs 🐻💖 to *LucidRains* for the fab x_transformers and for championing the open source AI cause.
 
-## 🚀 Quick Start
+## 🚀 Install
 
 ```bash
 pip install pali-torch
