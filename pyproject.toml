@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pali-torch"
-version = "0.0.7"
+version = "0.0.8"
 description = "Pali - PyTorch"
 authors = ["Kye Gomez <kye@apac.ai>"]
 license = "MIT"
@@ -27,6 +27,7 @@ transformers = "*"
 torch = "*"
 einops = "*"
 dataclasses = "*"
+zetascale = "*"
 
 [tool.poetry.dev-dependencies]
 

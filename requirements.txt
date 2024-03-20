@@ -2,3 +2,4 @@ torch
 einops
 transformers
 dataclasses
+zetascale
