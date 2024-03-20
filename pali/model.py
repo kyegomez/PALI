@@ -129,6 +129,7 @@ class Pali:
         dec_heads=8,
     ):
         self.tokenizer = None
+        self.dim = dim
         self.vit_model = VitModel(
             image_size=image_size,
             patch_size=patch_size,
@@ -155,5 +156,7 @@ class Pali:
 
         """Get the output text embeddings"""
         result = self.ul(prompt, output, mask=mask, src_prepend_embeds=img_embeds)
+
+        # result = OutputHead(self.dim, -1)(result)
 
         return result
