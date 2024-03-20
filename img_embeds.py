@@ -1,7 +1,7 @@
 from PIL import Image
 from torchvision import transforms
 
-from pali import VitModel
+from pali.model import VitModel
 
 
 def img_to_tensor(img: str = "pali.png", img_size: int = 256):
@@ -27,6 +27,7 @@ def img_to_tensor(img: str = "pali.png", img_size: int = 256):
 
     # Add batch dimension
     x = x.unsqueeze(0)
+    print(x.shape)
 
     return x
 
