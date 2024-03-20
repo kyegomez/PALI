@@ -128,7 +128,6 @@ class Pali:
         dec_depth=6,
         dec_heads=8,
     ):
-        self.model_name = model_name
         self.tokenizer = None
         self.vit_model = VitModel(
             image_size=image_size,
@@ -138,7 +137,7 @@ class Pali:
             heads=heads,
         )
 
-        self.ul2 = UL2(
+        self.ul = UL2(
             dim=dim,
             enc_num_tokens=enc_num_tokens,
             enc_depth=enc_depth,
@@ -155,6 +154,6 @@ class Pali:
         img_embeds = self.vit_model.forward(img)
 
         """Get the output text embeddings"""
-        result = self.ul2(prompt, output, mask=mask, src_prepend_embeds=img_embeds)
+        result = self.ul(prompt, output, mask=mask, src_prepend_embeds=img_embeds)
 
         return result
